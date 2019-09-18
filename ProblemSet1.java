@@ -78,12 +78,11 @@ public class ProblemSet1 {
          int test2 = 87;
          int test3 = 82;
 
-         double hwGrade = ((homework1 + homework2 + homework3) / 3) * hwRate;
-         double quizGrade = ((quiz1 + quiz2 + quiz3) / 3) * quizRate;
-         double testGrade = ((test1 + test2 + test3) / 3) * testRate;
-         double grade = hwGrade + quizGrade + testGrade;
+         double hwTotal = (homework1 + homework2 + homework3) * hwRate;
+         double quizTotal = (quiz1 + quiz2 + quiz3) * quizRate;
+         double testTotal = (test1 + test2 + test3) * testRate;
+         double grade = (hwTotal / 3) + (quizTotal / 3) + (testTotal / 3);
          System.out.printf("\n%,.2f%s\n", grade, "%.");
-         //SHOULD BE 80.48% -> You're getting 80.15%
 
         /*
          * Exercise 5.
@@ -134,7 +133,16 @@ public class ProblemSet1 {
          * people will be on the last bus?
          */
 
-         
+         final double students = 273;
+         final double teachers = 28;
+         final double busCap = 54;
+         int totalPassengers = students + teachers;
+         int busNo = Math.ceil(totalPassengers / busCap);
+         double remainder = totalPassengers % busCap;
+
+         System.out.println("\n" + busNo + " buses are needed, with " + remainder + " on the last bus.");
+
+
 
         /*
          * Exercise 8.
