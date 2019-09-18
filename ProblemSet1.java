@@ -36,7 +36,7 @@ public class ProblemSet1 {
 
          final double inchToCM = 2.54;
          final double perimeter = ((2 * length) + (2 * width)) * inchToCM;
-         System.out.println("\n" + perimeter + " centimeters.");
+         System.out.printf("\n%,.2f %s\n", perimeter, "centimeters.");
 
         /*
          * Exercise 3.
@@ -45,8 +45,8 @@ public class ProblemSet1 {
          * by-11-inch sheet of paper?
          */
 
-         final double = Math.hypot(length, width);
-         
+         final double diagonal = Math.hypot(length, width);
+         System.out.printf("\n%,.2f %s\n", diagonal, "inches.");
 
         /*
          * Exercise 4.
@@ -55,17 +55,32 @@ public class ProblemSet1 {
          * what marking period grade will I get?
          */
 
-        int homework1 = 88;
-        int homework2 = 91;
-        int homework3 = 0;
-        int quiz1 = 84;
-        int quiz2 = 89;
-        int quiz3 = 93;
-        int test1 = 74;
-        int test2 = 87;
-        int test3 = 82;
+         /*
+         * Homework = 15%
+         * Quizzes = 35%
+         * Tests = 50%
+         */
 
+         final double hwRate = 0.15;
+         final double quizRate = 0.35;
+         final double testRate = 0.50;
 
+         int homework1 = 88;
+         int homework2 = 91;
+         int homework3 = 0;
+         int quiz1 = 84;
+         int quiz2 = 89;
+         int quiz3 = 93;
+         int test1 = 74;
+         int test2 = 87;
+         int test3 = 82;
+
+         double hwGrade = ((homework1 + homework2 + homework3) / 3) * hwRate;
+         double quizGrade = ((quiz1 + quiz2 + quiz3) / 3) * quizRate;
+         double testGrade = ((test1 + test2 + test3) / 3) * testRate;
+         double grade = hwGrade + quizGrade + testGrade;
+         System.out.printf("\n%,.2f%s\n", grade, "%.");
+         //SHOULD BE 80.48% -> You're getting 80.15%
 
         /*
          * Exercise 5.
@@ -74,7 +89,18 @@ public class ProblemSet1 {
          * will I make this week?
          */
 
+         double monday = 7.5;
+         double tuesday = 8.0;
+         double wednesday = 10.5;
+         double thursday = 9.5;
+         double friday = 6.0;
+         double saturday = 11.5;
+         double sunday = 0.0;
 
+         final double hourPay = 12.50;
+         double totalHours = monday + tuesday + wednesday + thursday + friday + saturday + sunday;
+         double totalPay = totalHours * hourPay;
+         System.out.printf("\n%#,.2f%s\n", totalPay, ".");
 
         /*
          * Exercise 6.
