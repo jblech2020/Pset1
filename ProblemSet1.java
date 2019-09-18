@@ -12,6 +12,9 @@
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
 
+import java.text.NumberFormat;
+import java.lang.Math;
+
 public class ProblemSet1 {
 
     public static void main(String[] args) {
@@ -100,7 +103,8 @@ public class ProblemSet1 {
          final double hourPay = 12.50;
          double totalHours = monday + tuesday + wednesday + thursday + friday + saturday + sunday;
          double totalPay = totalHours * hourPay;
-         System.out.printf("\n%#,.2f%s\n", totalPay, ".");
+         NumberFormat currencyformat = NumberFormat.getCurrencyInstance();
+         System.out.println("\n" + currencyformat.format(totalPay) + ".");
 
         /*
          * Exercise 6.
@@ -108,6 +112,19 @@ public class ProblemSet1 {
          * What is my take-home pay each check?
          */
 
+         final double salary = 117000;
+         double payPeriod = salary / 24;
+
+         final double preTax401k = 0.07; //Deducted before tax
+         double taxedPay = payPeriod * (1 - preTax401k);
+
+         final double fedTax = 0.240;
+         double fedTaxedPay = taxedPay * (1 - fedTax);
+
+         final double stateTax = 0.0637;
+         double takeHomePay = fedTaxedPay * (1 - stateTax);
+
+         System.out.println("\n" + currencyformat.format(takeHomePay) + ".");
 
 
         /*
@@ -117,7 +134,7 @@ public class ProblemSet1 {
          * people will be on the last bus?
          */
 
-
+         
 
         /*
          * Exercise 8.
