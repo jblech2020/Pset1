@@ -136,13 +136,11 @@ public class ProblemSet1 {
          final double students = 273;
          final double teachers = 28;
          final double busCap = 54;
-         int totalPassengers = students + teachers;
-         int busNo = Math.ceil(totalPassengers / busCap);
+         double totalPassengers = students + teachers;
+         double busNo = Math.ceil(totalPassengers / busCap);
          double remainder = totalPassengers % busCap;
 
-         System.out.println("\n" + busNo + " buses are needed, with " + remainder + " on the last bus.");
-
-
+         System.out.printf("\n%.0f %s %.0f %s\n", busNo, "buses are needed, with", remainder, "passengers on the last bus.");
 
         /*
          * Exercise 8.
@@ -150,7 +148,14 @@ public class ProblemSet1 {
          * What is the surface area of a standard Cornhole board?
          */
 
+         final double cornholeLength = 48;
+         final double cornholeWidth = 24;
+         final double cornholeDiameter = 6;
+         double cornholeRadius = cornholeDiameter / 2;
+         double circleArea = Math.PI * cornholeRadius * cornholeRadius;
+         double cornholeArea = (cornholeLength * cornholeWidth) - circleArea;
 
+         System.out.printf("\n%,.2f %s\n", cornholeArea, "square inches.");
 
         /*
          * Exercise 9.
@@ -158,7 +163,17 @@ public class ProblemSet1 {
          * Are the years 2020, 2100, and 2400 leap years?
          */
 
+         int year = 2020;
+         boolean leapTest = (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
+         System.out.println("\n" + year + " is a leap year..." + leapTest + ".");
 
+         year = 2100;
+         leapTest = (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
+         System.out.println(year + " is a leap year..." + leapTest + ".");
+
+         year = 2400;
+         leapTest = (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
+         System.out.println(year + " is a leap year..." + leapTest + ".");
 
         /*
          * Exercise 10.
@@ -166,7 +181,11 @@ public class ProblemSet1 {
          * What is the wind chill?
          */
 
+         final double temp = 38;
+         final double windSpeed = 14;
+         final double windChill = 35.74 + (0.6215 * temp) + (((0.4275 * temp) - 35.75) * Math.pow(windSpeed, 0.16));
 
+         System.out.printf("\n%,.1f %s\n\n", windChill, "degrees.");
 
     }
 }
