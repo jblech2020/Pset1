@@ -25,11 +25,11 @@ public class ProblemSet1 {
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
 
-         final double length = 11;
-         final double width = 8.5;
-         final double inchToMM = 645.16;
-         final double area = length * width * inchToMM;
-         System.out.printf("\n%,.2f %s\n", area, "square millimeters."); //1st "%" formats integer, 2nd "%" formats string
+         final double LENGTH = 11;
+         final double WIDTH = 8.5;
+         final double INCH_TO_MM = 645.16;
+         final double AREA = LENGTH * WIDTH * INCH_TO_MM;
+         System.out.printf("\n%,.2f %s\n", AREA, "square millimeters."); //1st "%" formats integer, 2nd "%" formats string
 
         /*
          * Exercise 2.
@@ -37,9 +37,9 @@ public class ProblemSet1 {
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
 
-         final double inchToCM = 2.54;
-         final double perimeter = ((2 * length) + (2 * width)) * inchToCM;
-         System.out.printf("\n%,.2f %s\n", perimeter, "centimeters.");
+         final double INCH_TO_CM = 2.54;
+         final double PERIMETER = ((2 * LENGTH) + (2 * WIDTH)) * INCH_TO_CM;
+         System.out.printf("\n%,.2f %s\n", PERIMETER, "centimeters.");
 
         /*
          * Exercise 3.
@@ -48,8 +48,8 @@ public class ProblemSet1 {
          * by-11-inch sheet of paper?
          */
 
-         final double diagonal = Math.hypot(length, width);
-         System.out.printf("\n%,.2f %s\n", diagonal, "inches.");
+         final double DIAGONAL = Math.hypot(LENGTH, WIDTH);
+         System.out.printf("\n%,.2f %s\n", DIAGONAL, "inches.");
 
         /*
          * Exercise 4.
@@ -64,9 +64,9 @@ public class ProblemSet1 {
          * Tests = 50%
          */
 
-         final double hwRate = 0.15;
-         final double quizRate = 0.35;
-         final double testRate = 0.50;
+         final double HW_RATE = 0.15;
+         final double QUIZ_RATE = 0.35;
+         final double TEST_RATE = 0.50;
 
          int homework1 = 88;
          int homework2 = 91;
@@ -78,9 +78,9 @@ public class ProblemSet1 {
          int test2 = 87;
          int test3 = 82;
 
-         double hwTotal = (homework1 + homework2 + homework3) * hwRate;
-         double quizTotal = (quiz1 + quiz2 + quiz3) * quizRate;
-         double testTotal = (test1 + test2 + test3) * testRate;
+         double hwTotal = (homework1 + homework2 + homework3) * HW_RATE;
+         double quizTotal = (quiz1 + quiz2 + quiz3) * QUIZ_RATE;
+         double testTotal = (test1 + test2 + test3) * TEST_RATE;
          double grade = (hwTotal / 3) + (quizTotal / 3) + (testTotal / 3);
          System.out.printf("\n%,.2f%s\n", grade, "%.");
 
@@ -99,9 +99,9 @@ public class ProblemSet1 {
          double saturday = 11.5;
          double sunday = 0.0;
 
-         final double hourPay = 12.50;
+         final double HOUR_PAY = 12.50;
          double totalHours = monday + tuesday + wednesday + thursday + friday + saturday + sunday;
-         double totalPay = totalHours * hourPay;
+         double totalPay = totalHours * HOUR_PAY;
          NumberFormat currencyformat = NumberFormat.getCurrencyInstance();
          System.out.println("\n" + currencyformat.format(totalPay) + ".");
 
@@ -111,17 +111,17 @@ public class ProblemSet1 {
          * What is my take-home pay each check?
          */
 
-         final double salary = 117000;
-         double payPeriod = salary / 24;
+         final double SALARY = 117000;
+         double payPeriod = SALARY / 24;
 
-         final double preTax401k = 0.07; //Deducted before tax
-         double taxedPay = payPeriod * (1 - preTax401k);
+         final double TAX_401k = 0.07; //Deducted before tax
+         double taxedPay = payPeriod * (1 - TAX_401k);
 
-         final double fedTax = 0.240;
-         double fedTaxedPay = taxedPay * (1 - fedTax);
+         final double FED_TAX = 0.240;
+         double fedTaxedPay = taxedPay * (1 - FED_TAX);
 
-         final double stateTax = 0.0637;
-         double takeHomePay = fedTaxedPay * (1 - stateTax);
+         final double STATE_TAX = 0.0637;
+         double takeHomePay = fedTaxedPay * (1 - STATE_TAX);
 
          System.out.println("\n" + currencyformat.format(takeHomePay) + ".");
 
@@ -133,12 +133,12 @@ public class ProblemSet1 {
          * people will be on the last bus?
          */
 
-         final double students = 273;
-         final double teachers = 28;
-         final double busCap = 54;
-         double totalPassengers = students + teachers;
-         double busNo = Math.ceil(totalPassengers / busCap);
-         double remainder = totalPassengers % busCap;
+         final double STUDENTS = 273;
+         final double TEACHERS = 28;
+         final double BUS_CAP = 54;
+         double totalPassengers = STUDENTS + TEACHERS;
+         double busNo = Math.ceil(totalPassengers / BUS_CAP);
+         double remainder = totalPassengers % BUS_CAP;
 
          System.out.printf("\n%.0f %s %.0f %s\n", busNo, "buses are needed, with", remainder, "passengers on the last bus.");
 
@@ -148,12 +148,12 @@ public class ProblemSet1 {
          * What is the surface area of a standard Cornhole board?
          */
 
-         final double cornholeLength = 48;
-         final double cornholeWidth = 24;
-         final double cornholeDiameter = 6;
-         double cornholeRadius = cornholeDiameter / 2;
+         final double CORNHOLE_LENGTH = 48;
+         final double CORNHOLE_WIDTH = 24;
+         final double CORNHOLE_DIAMETER = 6;
+         double cornholeRadius = CORNHOLE_DIAMETER / 2;
          double circleArea = Math.PI * cornholeRadius * cornholeRadius;
-         double cornholeArea = (cornholeLength * cornholeWidth) - circleArea;
+         double cornholeArea = (CORNHOLE_LENGTH * CORNHOLE_WIDTH) - circleArea;
 
          System.out.printf("\n%,.2f %s\n", cornholeArea, "square inches.");
 
@@ -181,11 +181,11 @@ public class ProblemSet1 {
          * What is the wind chill?
          */
 
-         final double temp = 38;
-         final double windSpeed = 14;
-         final double windChill = 35.74 + (0.6215 * temp) + (((0.4275 * temp) - 35.75) * Math.pow(windSpeed, 0.16));
+         final double TEMP = 38;
+         final double WIND_SPEED = 14;
+         final double WIND_CHILL = 35.74 + (0.6215 * TEMP) + (((0.4275 * TEMP) - 35.75) * Math.pow(WIND_SPEED, 0.16));
 
-         System.out.printf("\n%,.1f %s\n\n", windChill, "degrees.");
+         System.out.printf("\n%,.1f %s\n\n", WIND_CHILL, "degrees.");
 
     }
 }
